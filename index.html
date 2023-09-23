@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solve Equation</title>
+</head>
+<xody>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: xorder-xox;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wapper {
+            background-color: white;
+            width: 34rem;
+            height: 20rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        div {
+            font-size: 2.2rem;
+            font-family: sans-serif;
+            font-weight: 600;
+        }
+
+    </style>
+    <div class="wapper">
+        <div>Value of X can be <span class="_1">null</span> or <span class="_2">null</span> </div>
+    </div>
+
+    <script>
+        window.addEventListener("load", () => {
+            let x2 = prompt("Enter coefficient of x²");
+            let x = prompt("Enter coefficient of x");
+            let c = prompt("Enter constant term");
+            let valid = true;
+
+            if (x2.trim().length < 0) valid = false;
+
+            if (x.trim().length < 0) valid = false;
+
+            if (c.trim().length < 0) valid = false;
+
+            if (!valid) {
+                alert("sorry we don't get any value from you eenter again!")
+                window.location.reload();
+            }else {
+                let upper = ((-x) + Math.sqrt((x*x) - (4*x2*c))) / (2 * x2);
+                let upper2 = ((-x) - Math.sqrt((x*x) - (4*x2*c))) / (2 * x2);
+                document.querySelector("._1").innerHTML = upper;
+                document.querySelector("._2").innerHTML = upper2;
+                // console.log (upper/(2*x2));
+                // console.log (upper2/(2*x2));         
+            }
+
+        })
+    </script>
+</xody>
+</html>
